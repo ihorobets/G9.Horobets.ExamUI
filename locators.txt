@@ -1,0 +1,15 @@
+№001
+
+кнопкa "Увійти"/SignIn = //*[@class='auth-popup-btn login-link icon-custom']
+кнопкa "Зареєструватись" = //*[@class='btn white reg-link']
+поле "Ім'я:" = //input[@name='USER_NAME']
+поле "Прізвище:" = //input[@name='USER_LAST_NAME']
+поле "Номер телефону:" = //input[@name='PERSONAL_PHONE']
+поле "E-Mail:" = //input[@name='USER_EMAIL']
+поле "Пароль:" = //input[@name='USER_PASSWORD']
+поле "Підтвердження пароля:" = //input[@name='USER_CONFIRM_PASSWORD']
+кнопка "Реєстрація"//RegistrationIn = //button[@name='Register']
+повідомлення "Користувач з таким e-mail(gorobetsira@ukr.net) вже існує." = //div[@class='message-errors']
+
+
+
