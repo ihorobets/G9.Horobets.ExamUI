@@ -11,7 +11,5 @@ public class ParentPage extends CommonActionsWithElements{
         super(webDriver);
     }
 
-    public HeaderElement getHeaderElement() {
-        return new HeaderElement(webDriver);
-    }
+
 }

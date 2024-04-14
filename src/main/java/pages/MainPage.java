@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import pages.elements.HeaderElement;
 
 public class MainPage extends ParentPage {
 
@@ -11,6 +12,10 @@ public class MainPage extends ParentPage {
 
     public MainPage(WebDriver webDriver) {
         super(webDriver);
+    }
+
+    public HeaderElement getHeaderElement() {
+        return new HeaderElement(webDriver);
     }
 
     public void openMainPage() {

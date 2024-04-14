@@ -69,7 +69,8 @@ public class CommonActionsWithElements {
         Assert.assertFalse(elementName + " is displayed", isElementDisplayed(webElement, elementName));
     }
 
-    private void printErrorAndStopTest(Exception e) {
+
+       private void printErrorAndStopTest(Exception e) {
         logger.error("Can not work with element " + e);
         Assert.fail("Can not work with element " + e);
     }

@@ -1,6 +1,6 @@
 №001
 
-кнопкa "Увійти"/SignIn = //*[@class='auth-popup-btn login-link icon-custom']
+кнопкa "Увійти" = //*[@class='auth-popup-btn login-link icon-custom']
 кнопкa "Зареєструватись" = //*[@class='btn white reg-link']
 поле "Ім'я:" = //input[@name='USER_NAME']
 поле "Прізвище:" = //input[@name='USER_LAST_NAME']
@@ -11,5 +11,37 @@
 кнопка "Реєстрація"//RegistrationIn = //button[@name='Register']
 повідомлення "Користувач з таким e-mail(gorobetsira@ukr.net) вже існує." = //div[@class='message-errors']
 
+№002
+
+кнопка "Каталог" = //a[@href='/catalog/']
+кнопка "Собаки" = //a[@href='/catalog/sobaki/' and @class= 'img']
+кнопка "Консерви та паучі" = //a[@href ='/catalog/sobaki/konservy-dlja-sobak/' and @class= 'item']
+меню "Підбір параметрів" = //*[@class='bx_filter_title']
+"Торгова Марка" = //div[text()='Торгова марка']
+галочка на "Royal Canin" = //*[@title='Royal Canin']
+кнопка "Показати" = //a[@class='bx_filter_search_button']
+консерва = //a[contains(text(), 'Royal Canin Veterinary Gastrointestinal Puppy Ultra Soft Mouse')]
+кнопка сердечко "Обране" = //a[@id='bx_117848907_23329_wish_list']
+кнопка "Вибране" в Хедері = //*[@class='wishlist-link icon-custom']
+кнопка "Оформити замовлення" = //*[@class='btn btn-lg btn-default basket-btn-checkout disabled']
 
 
+
+№003
+
+кнопка "Контакти" = //*[@href='/contacts/' and @class='secondary-link']
+кнопка "Задати питання" = //*[@class='question-popup-btn btn']
+Меню:
+поле "Ваше ім'я" = //*[@name='form_text_7']
+поле "Контактний телефон" = //*[@name='form_text_8']
+поле "E-mail" = //*[@data-sid='email']
+поле "Текст повідомлення" = //textarea[@data-sid='message']
+кнопка "Надіслати" = //button[@name="web_form_submit"]
+
+
+//*[contains(text(), 'Purina Pro Plan Veterinary Diets HA Hypoallergenic')]
+консерва = //a[contains(text(), 'Purina Pro Plan Veterinary Diets HA Hypoallergenic')]
+
+
+005
+//*[@id="map-canvas"]

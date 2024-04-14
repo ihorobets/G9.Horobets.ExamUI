@@ -1,6 +1,5 @@
 package pages;
 
-import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -34,6 +33,9 @@ public class PersonalPage extends ParentPage {
     @FindBy(xpath = "//div[@class='message-errors']")
     private WebElement messageUserExist;
 
+    @FindBy(xpath = "//*[@class='btn btn-lg btn-default basket-btn-checkout disabled']")
+    private WebElement buttonOformlennyaZamovlennya;
+
     public PersonalPage(WebDriver webDriver) {
         super(webDriver);
     }
@@ -53,34 +55,34 @@ public class PersonalPage extends ParentPage {
     }
 
     public PersonalPage enterTextIntoInputRegistrationName(String text) {
-        cleanAndEnterTextIntoElement(inputRegistrationName, "registrationName");
+        cleanAndEnterTextIntoElement(inputRegistrationName, text);
         return this;
     }
 
     public PersonalPage enterTextIntoInputRegistrationLastName(String text) {
-        cleanAndEnterTextIntoElement(inputRegistrationLastName, "registrationLastName");
+        cleanAndEnterTextIntoElement(inputRegistrationLastName, text);
         return this;
     }
 
     public PersonalPage enterTextIntoInputRegistrationPhoneNumber(String text) {
-        cleanAndEnterTextIntoElement(inputRegistrationPhoneNumber, "registrationPhoneNumber");
+        cleanAndEnterTextIntoElement(inputRegistrationPhoneNumber, text);
         return this;
     }
 
 // todo
 
     public PersonalPage enterTextIntoInputRegistrationEmail(String text) {
-        cleanAndEnterTextIntoElement(inputRegistrationEmail, "gorobetsira@ukr.net");
+        cleanAndEnterTextIntoElement(inputRegistrationEmail, text);
         return this;
     }
 
     public PersonalPage enterTextIntoInputRegistrationPassword(String text) {
-        cleanAndEnterTextIntoElement(inputRegistrationPassword, "registrationPassword");
+        cleanAndEnterTextIntoElement(inputRegistrationPassword, text);
         return this;
     }
 
     public PersonalPage enterTextIntoInputRegistrationConfirmPassword(String text) {
-        cleanAndEnterTextIntoElement(inputRegistrationConfirmPassword, "registrationConfirmPassword");
+        cleanAndEnterTextIntoElement(inputRegistrationConfirmPassword, text);
         return this;
     }
 
@@ -91,6 +93,22 @@ public class PersonalPage extends ParentPage {
 
     public PersonalPage checkIsMessageUserExistDisplayed() {
         checkElementsDisplayed(messageUserExist, "Message User Exist");
+        return this;
+    }
+
+    public PersonalPage checkIsRedirectToKoshyk() {
+        // TODO checkUrlWithPattern();
+        // todo element
+        return this;
+    }
+
+    public PersonalPage checkIsButtonOformytyZamovlennyaDisplayed(){
+        checkElementsDisplayed(buttonOformlennyaZamovlennya, "Button Oformlennya Zamovlennya");
+        return this;
+    }
+
+    public PersonalPage checkIsKovservaRoyalCaninDisplayed() {
+       // TODO Assert.assertEquals();
         return this;
     }
 }
