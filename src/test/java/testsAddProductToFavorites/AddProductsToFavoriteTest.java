@@ -6,7 +6,7 @@ import org.junit.Test;
 public class AddProductsToFavoriteTest extends BaseTest {
 
     @Test
-    public void TC_002_addProductsToFavoriteTest() {
+    public void TC_002_addProductToKoshykTest() {
         pageProvider.getMainPage().openMainPage();
         pageProvider.getMainPage().getHeaderElement().clickOnButtonCatalog()
                 .checkIsRedirectToCatalogPage()

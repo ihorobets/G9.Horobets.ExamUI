@@ -29,14 +29,15 @@
 
 №003
 
-кнопка "Контакти" = //*[@href='/contacts/' and @class='secondary-link']
-кнопка "Задати питання" = //*[@class='question-popup-btn btn']
+
+консерва = //a[contains(text(), 'Purina Pro Plan Veterinary Diets HA Hypoallergenic')]
 Меню:
-поле "Ваше ім'я" = //*[@name='form_text_7']
-поле "Контактний телефон" = //*[@name='form_text_8']
-поле "E-mail" = //*[@data-sid='email']
-поле "Текст повідомлення" = //textarea[@data-sid='message']
-кнопка "Надіслати" = //button[@name="web_form_submit"]
+поле "Ваше ім'я" = //input[@data-sid='name']
+поле "Контактний телефон" = //input[@data-sid='phone']
+поле "E-mail" = //input[@data-sid='email']
+поле "Текст повідомлення" = //textarea[@name='form_textarea_6']
+кнопка "Відправити" = //button[@name='web_form_submit']
+
 
 
 //*[contains(text(), 'Purina Pro Plan Veterinary Diets HA Hypoallergenic')]

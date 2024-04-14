@@ -69,7 +69,6 @@ public class PersonalPage extends ParentPage {
         return this;
     }
 
-// todo
 
     public PersonalPage enterTextIntoInputRegistrationEmail(String text) {
         cleanAndEnterTextIntoElement(inputRegistrationEmail, text);
