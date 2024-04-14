@@ -29,7 +29,6 @@
 
 №003
 
-
 консерва = //a[contains(text(), 'Purina Pro Plan Veterinary Diets HA Hypoallergenic')]
 Меню:
 поле "Ваше ім'я" = //input[@data-sid='name']
@@ -45,4 +44,9 @@
 
 
 005
-//*[@id="map-canvas"]
+
+магазини:
+//h2[text()=' Інтернет зоомагазин TORZOO']
+//h2[contains(text(), 'Зоомагазин TORZOO - М.Арнаутська 71')]
+//h2[contains(text(), 'Зоомагазин TORZOO - Вул. Львівська 15 Б (ЖК Море)')]
+//h2[contains(text(), 'Зоомагазин TORZOO - Проспект  Небесної Сотні. Чорноморка 2')]
