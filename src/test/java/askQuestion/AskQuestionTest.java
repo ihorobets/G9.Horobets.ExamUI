@@ -3,7 +3,7 @@ package askQuestion;
 import baseTest.BaseTest;
 import org.junit.Test;
 
-public class AskQuestion extends BaseTest {
+public class AskQuestionTest extends BaseTest {
 
     @Test
     public void TC_003_askQuestion() {

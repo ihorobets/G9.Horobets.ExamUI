@@ -11,15 +11,18 @@ public class TestForUserRegistration extends BaseTest {
         pageProvider.getMainPage().getHeaderElement()
                 .clickOnButtonUviity()
                 .checkIsRedirectToPersonalPage()
-                .clickOnButtonRegistration()
-                .enterTextIntoInputRegistrationName("Iryna")
-                .enterTextIntoInputRegistrationLastName("Horobets")
-                .enterTextIntoInputRegistrationPhoneNumber("0969311198")
-                .enterTextIntoInputRegistrationEmail("gorobetsira@ukr.net")
-                .enterTextIntoInputRegistrationPassword("123456")
-                .enterTextIntoInputRegistrationConfirmPassword("123456")
-                .clickOnButtonRegistrationIn()
+                .clickOnButtonZareestruvatysya()
+                .enterTextIntoInputRegistrationName(data.TestData.VALID_REGISTRATION_NAME_UI)
+                .enterTextIntoInputRegistrationLastName(data.TestData.VALID_REGISTRATION_LAST_NAME_UI)
+                .enterIntoInputRegistrationPhoneNumber(data.TestData.VALID_REGISTRATION_PHONE_NUMBER_UI)
+                .enterTextIntoInputRegistrationEmail(data.TestData.VALID_REGISTRATION_EMAIL_UI)
+                .enterTextIntoInputRegistrationPassword(data.TestData.VALID_PASSWORD_UI)
+                .enterTextIntoInputRegistrationConfirmPassword(data.TestData.VALID_PASSWORD_UI)
+                .clickOnButtonReestratsiya()
                 .checkIsMessageUserExistDisplayed()
+                .checkIsButtonReestratsiyaIsDisplayed()
+                .checkIsButtonVyityIsNotDisplayed()
+
         ;
 
     }
