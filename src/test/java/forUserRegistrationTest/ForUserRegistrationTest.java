@@ -1,9 +1,9 @@
-package testsForRegistration;
+package forUserRegistrationTest;
 
 import baseTest.BaseTest;
 import org.junit.Test;
 
-public class TestForUserRegistration extends BaseTest {
+public class ForUserRegistrationTest extends BaseTest {
 
     @Test
     public void TC_001_registrationExistUserTest() {

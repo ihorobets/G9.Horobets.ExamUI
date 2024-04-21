@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import pages.elements.HeaderElement;
 
 public class PersonalPage extends ParentPage {
 
@@ -39,8 +40,42 @@ public class PersonalPage extends ParentPage {
     @FindBy(xpath = "//a[@class='icon-custom']")
     private WebElement buttonVyity;
 
+    @FindBy(xpath = "//input[@name='USER_LOGIN']")
+    private WebElement inputLoginPhoneNumber;
+
+    @FindBy(xpath = "//input[@name='USER_PASSWORD']")
+    private WebElement inputLoginPassword;
+
+    @FindBy(xpath = "//button[@name='Login']")
+    private WebElement buttonVyityLoginForm;
+
+    @FindBy(xpath = "//a[@href='/personal/orders/' and not(@class='item')]")
+    private WebElement buttonPotochniZamovlennya;
+
+    @FindBy(xpath = "//a[@href='/personal/private/' and not(@class='item')]")
+    private WebElement buttonOsobystiDani;
+
+    @FindBy(xpath = "//a[@href='/personal/orders/?filter_history=Y' and not(@class='item')]")
+    private WebElement buttonIstoriyaZamovlen;
+
+    @FindBy(xpath = "//a[@href='/personal/profiles/' and not(@class='item')]")
+    private WebElement buttonProfiliZamovlen;
+
+    @FindBy(xpath = "//a[@href='/personal/cart/' and not(@class='basket-link icon-custom')]")
+    private WebElement buttonKoshyk;
+
+    @FindBy(xpath = "//a[@href='/personal/subscribe/' and not(@class='item')]")
+    private WebElement buttonOpovischennyaProNayavnisnt;
+
+    @FindBy(xpath = "//button[@name='Login']")
+    private WebElement buttonUviity;
+
     public PersonalPage(WebDriver webDriver) {
         super(webDriver);
+    }
+
+    public HeaderElement getHeaderElement() {
+        return new HeaderElement(webDriver);
     }
 
     public PersonalPage checkIsRedirectToPersonalPage() {
@@ -104,13 +139,13 @@ public class PersonalPage extends ParentPage {
         return this;
     }
 
-    public PersonalPage checkIsButtonOformytyZamovlennyaDisplayed(){
+    public PersonalPage checkIsButtonOformytyZamovlennyaDisplayed() {
         checkElementsDisplayed(buttonOformlennyaZamovlennya, "Button Oformlennya Zamovlennya");
         return this;
     }
 
     public PersonalPage checkIsKovservaRoyalCaninDisplayed() {
-       // TODO Assert.assertEquals();
+        // TODO Assert.assertEquals();
         return this;
     }
 
@@ -121,6 +156,79 @@ public class PersonalPage extends ParentPage {
 
     public PersonalPage checkIsButtonVyityIsNotDisplayed() {
         checkElementsNotDisplayed(buttonVyity, "Button Vyity");
+        return this;
+    }
+
+    public PersonalPage fillLoginFormWithValidCred() {
+        enterNumberIntoInputLoginPhone("380969311198");
+        enterTextIntoInputLoginPassword("123456");
+        clickOnButtonUviityLoginForm();
+        return this;
+
+    }
+
+    private PersonalPage enterTextIntoInputLoginPassword(String text) {
+        cleanAndEnterTextIntoElement(inputLoginPassword, text);
+        return this;
+    }
+
+    private PersonalPage enterNumberIntoInputLoginPhone(String text) {
+        cleanAndEnterTextIntoElement(inputLoginPhoneNumber, text);
+        return this;
+    }
+
+    public PersonalPage clickOnButtonUviityLoginForm() {
+        clickOnElement(buttonVyityLoginForm);
+        return new PersonalPage(webDriver);
+    }
+
+    public PersonalPage checkIsButtonPotochniZamovlennyaIsDisplayed() {
+        isElementDisplayed(buttonPotochniZamovlennya, "Button Potochni Zamovlennya");
+        return this;
+    }
+
+    public PersonalPage checkIsButtonOsobystiDaniIsDisplayed() {
+        isElementDisplayed(buttonOsobystiDani, "Button Osobysti Dani");
+        return this;
+    }
+
+    public PersonalPage checkIsButtonIstoriyaZamovlenIsDisplayed() {
+        isElementDisplayed(buttonIstoriyaZamovlen, "Button Istoriya Zamovlen");
+        return this;
+    }
+
+    public PersonalPage checkIsButtonProfiliZamovlenIsDisplayed() {
+        isElementDisplayed(buttonProfiliZamovlen, "Button Profili Zamovlen");
+        return this;
+    }
+
+    public PersonalPage checkIsButtonKoshykIsDisplayed() {
+        isElementDisplayed(buttonKoshyk, "Button Koshyk");
+        return this;
+    }
+
+    public PersonalPage checkIsButtonOpovischennyaProNayavnisntIsDisplayed() {
+        isElementDisplayed(buttonOpovischennyaProNayavnisnt, "Button Opovischennya Pro Nayavnisnt");
+        return this;
+    }
+
+    public PersonalPage checkIsButtonVyityIsDisplayed() {
+        isElementDisplayed(buttonVyity, "Button Vyity");
+        return this;
+    }
+
+    public PersonalPage clickOnButtonVyity() {
+        clickOnElement(buttonVyity);
+        return this;
+    }
+
+    public PersonalPage checkIsButtonUviityIsDisplayed() {
+        checkElementsDisplayed(buttonUviity, "Button Uviity");
+        return this;
+    }
+
+    public PersonalPage checkIsButtonZareestruvatysyaIsDisplayed() {
+        checkElementsDisplayed(buttonZareestruvatysya, "Button Zareestruvatysya");
         return this;
     }
 }

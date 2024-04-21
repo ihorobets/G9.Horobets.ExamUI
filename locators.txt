@@ -43,7 +43,7 @@
 (Ваше повідомлення прийнято!Ми зв'яжемося з Вами найближчим робочий час)
 
 
-
+№004
 
 //*[contains(text(), 'Purina Pro Plan Veterinary Diets HA Hypoallergenic')]
 консерва = //a[contains(text(), 'Purina Pro Plan Veterinary Diets HA Hypoallergenic')]
@@ -51,8 +51,14 @@
 
 005
 
-магазини:
-//h2[text()=' Інтернет зоомагазин TORZOO']
-//h2[contains(text(), 'Зоомагазин TORZOO - М.Арнаутська 71')]
-//h2[contains(text(), 'Зоомагазин TORZOO - Вул. Львівська 15 Б (ЖК Море)')]
-//h2[contains(text(), 'Зоомагазин TORZOO - Проспект  Небесної Сотні. Чорноморка 2')]
+увійти логін форм = //button[@name="Login"]
+номер телефону = //input[@name='USER_LOGIN']
+пароль = //input[@name='USER_PASSWORD']
+мій кабінет = //a[@class='personal-link icon-custom']
+кнопка "Поточні замовлення" = //a[@href='/personal/orders/' and not(@class='item')]
+кнопка "Особисті дані" = //a[@href='/personal/private/' and not(@class='item')]
+кнопка "Історія замовлень" = //a[@href='/personal/orders/?filter_history=Y' and not(@class='item')]
+кнопка "Профілі замовлень" = //a[@href='/personal/profiles/' and not(@class='item')]
+кнопка "Кошик" = //a[@href='/personal/cart/' and not(@class='basket-link icon-custom')]
+кнопка "Оповіщення про наявність" = //a[@href='/personal/subscribe/' and not(@class='item')]
+кнопка "Вихід" = //a[@href='/personal/?logout=yes']

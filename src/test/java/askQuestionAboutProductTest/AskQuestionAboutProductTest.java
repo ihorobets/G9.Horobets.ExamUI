@@ -1,12 +1,12 @@
-package testsAskQuestionAboutProduct;
+package askQuestionAboutProductTest;
 
 import baseTest.BaseTest;
 import org.junit.Test;
 
-public class TestAskQuestionAboutProduct extends BaseTest {
+public class AskQuestionAboutProductTest extends BaseTest {
 
     @Test
-    public void TC_003_askQuestion() {
+    public void TC_003_askQuestionAboutProductTest() {
         pageProvider.getMainPage().openMainPage();
         pageProvider.getMainPage().getHeaderElement().clickOnButtonCatalog()
                 .checkIsRedirectToCatalogPage()

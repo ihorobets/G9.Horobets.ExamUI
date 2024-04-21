@@ -1,9 +1,9 @@
-package testsAddProductToFavorites;
+package addProductToFavoritesTest;
 
 import baseTest.BaseTest;
 import org.junit.Test;
 
-public class TestAddProductsToFavorite extends BaseTest {
+public class AddProductsToFavoriteTest extends BaseTest {
 
     @Test
     public void TC_002_addFavoriteProductToKoshykTest() {

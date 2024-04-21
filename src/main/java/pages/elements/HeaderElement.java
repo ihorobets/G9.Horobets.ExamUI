@@ -17,8 +17,8 @@ public class HeaderElement extends CommonActionsWithElements {
     @FindBy(xpath = "//*[@class='wishlist-link icon-custom']")
     private WebElement buttonVybrane;
 
-    @FindBy(xpath = "//a[@class='secondary-link' and @href='/contacts/']")
-    private WebElement buttonContacts;
+    @FindBy(xpath = "//a[@class='personal-link icon-custom']")
+    private WebElement buttonMiyCabinet;
 
 
     public HeaderElement(WebDriver webDriver) {
@@ -41,8 +41,8 @@ public class HeaderElement extends CommonActionsWithElements {
     }
 
 
-    public ContactsPage clickOnContacts() {
-        clickOnElement(buttonContacts);
-        return new ContactsPage(webDriver);
+    public PersonalPage clickOnButtonMiyCabinet() {
+        clickOnElement(buttonMiyCabinet);
+        return new PersonalPage(webDriver);
     }
 }
