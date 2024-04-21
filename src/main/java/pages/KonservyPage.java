@@ -2,6 +2,7 @@ package pages;
 
 
 
+import org.checkerframework.checker.units.qual.K;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -43,7 +44,7 @@ public class KonservyPage extends ParentPage {
     private WebElement buttonSend;
 
     @FindBy(xpath = "//a[contains(text(), 'Purina Pro Plan Veterinary Diets HA Hypoallergenic')]")
-    private WebElement buttonKonservaProPlan;
+    private WebElement konservaProPlan;
 
     @FindBy(xpath = "//*[@class='success-message']")
     private WebElement successMessage;
@@ -115,13 +116,19 @@ public class KonservyPage extends ParentPage {
         return this;
     }
 
-    public KonservyPage checkIsButtonSendDisplayed() {
-        checkElementsDisplayed(buttonSend, "Button Send");
+
+    public KonservyPage clickOnKonservaProPlan() {
+        clickOnElement(konservaProPlan);
         return this;
     }
 
-    public KonservyPage clickOnButtonKonservaProPlan() {
-        clickOnElement(buttonKonservaProPlan);
+    public KonservyPage clickOnButtonSend() {
+        clickOnElement(buttonSend);
+        return this;
+    }
+
+    public KonservyPage checkIsSuccessMessageDisplayed() {
+        checkElementsDisplayed(successMessage, "Success Message");
         return this;
     }
 

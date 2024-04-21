@@ -1,9 +1,9 @@
-package askQuestion;
+package testsAskQuestionAboutProduct;
 
 import baseTest.BaseTest;
 import org.junit.Test;
 
-public class AskQuestionTest extends BaseTest {
+public class TestAskQuestionAboutProduct extends BaseTest {
 
     @Test
     public void TC_003_askQuestion() {
@@ -14,14 +14,13 @@ public class AskQuestionTest extends BaseTest {
                 .checkIsRedirectToSobakiPage()
                 .clickOnButtonKonservy()
                 .checkIsRedirectToKonservyPage()
-                .clickOnButtonKonservaProPlan()
+                .clickOnKonservaProPlan()
                 .enterTextIntoInputName("Ivan")
                 .enterTextIntoInputPhone("000 000 00 00")
                 .enterTextIntoInputEmail("jjj@gmail.com")
                 .enterTextIntoInputMessage("Text")
-                .checkIsButtonSendDisplayed()
-
-
+                .clickOnButtonSend()
+                .checkIsSuccessMessageDisplayed()
         ;
 
     }
