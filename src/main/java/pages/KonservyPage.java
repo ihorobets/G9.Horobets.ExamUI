@@ -22,7 +22,7 @@ public class KonservyPage extends ParentPage {
     private WebElement buttonPokazaty;
 
     @FindBy(xpath = "//a[contains(text(), 'Royal Canin Veterinary Gastrointestinal Puppy Ultra Soft Mouse')]")
-    private WebElement buttonKonservaRoyalCanin;
+    private WebElement KonservaRoyalCanin;
 
     @FindBy(xpath = "//a[@id='bx_117848907_23329_wish_list']")
     private WebElement buttonVybrene;
@@ -83,8 +83,8 @@ public class KonservyPage extends ParentPage {
         return this;
     }
 
-    public KonservyPage clickOnButtonKonservaRoyalCanin() {
-        clickOnElement(buttonKonservaRoyalCanin);
+    public KonservyPage clickOnKonservaRoyalCanin() {
+        clickOnElement(KonservaRoyalCanin);
         return this;
     }
 

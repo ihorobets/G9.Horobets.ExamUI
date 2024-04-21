@@ -3,10 +3,10 @@ package testsAddProductToFavorites;
 import baseTest.BaseTest;
 import org.junit.Test;
 
-public class AddProductsToFavoriteTest extends BaseTest {
+public class TestAddProductsToFavorite extends BaseTest {
 
     @Test
-    public void TC_002_addProductToKoshykTest() {
+    public void TC_002_addFavoriteProductToKoshykTest() {
         pageProvider.getMainPage().openMainPage();
         pageProvider.getMainPage().getHeaderElement().clickOnButtonCatalog()
                 .checkIsRedirectToCatalogPage()
@@ -16,7 +16,7 @@ public class AddProductsToFavoriteTest extends BaseTest {
                 .clickOnTorgovaMarka()
                 .clickOnButtonRoyalCanin()
                 .clickOnButtonPokazaty()
-                .clickOnButtonKonservaRoyalCanin()
+                .clickOnKonservaRoyalCanin()
                 .clickOnButtonVybrane();
         pageProvider.getMainPage().getHeaderElement().clickOnButtonVybrane()
                 .checkIsRedirectToKoshyk()
