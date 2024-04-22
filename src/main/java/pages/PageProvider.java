@@ -15,22 +15,5 @@ public class PageProvider {
         return new MainPage(webDriver);
     }
 
-    public PersonalPage getPersonalPage() {
-        return new PersonalPage(webDriver);
-    }
-
-    public HeaderElement getHeaderElement() {
-        return new HeaderElement(webDriver);
-    }
-
-    public CatalogPage getCatalogPage() {
-        return new CatalogPage(webDriver);
-    }
-
-    public KonservyPage getKonservyPage() {
-        return new KonservyPage(webDriver);
-    }
-
-
 
 }

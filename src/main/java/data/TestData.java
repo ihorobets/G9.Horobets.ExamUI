@@ -7,4 +7,9 @@ public class TestData {
     public static final String VALID_REGISTRATION_EMAIL_UI = "gorobetsira@ukr.net";
     public static final String VALID_PASSWORD_UI = "123456";
 
+    public static final String VALID_NAME_FOR_ORDER = "Ivanov Ivan";
+    public static final String VALID_PHONE_FOR_ORDER = "000 000 00 00";
+    public static final String VALID_CITY_FOR_ORDER = "Київ";
+    public static final String VALID_COMMENT_FOR_ORDER = "Text";
+
 }

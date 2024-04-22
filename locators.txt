@@ -45,8 +45,16 @@
 
 №004
 
-//*[contains(text(), 'Purina Pro Plan Veterinary Diets HA Hypoallergenic')]
-консерва = //a[contains(text(), 'Purina Pro Plan Veterinary Diets HA Hypoallergenic')]
+кнопка "Кошик" в хедері сторінки = //*[@id='bx_basketFKauiI']//a]
+перейти в каталог = //a[@class='btn']
+кнопка "Купити в один клік" = //a[@class='btn one-click']
+поле "ПІБ" = //input[@name='BUY1CLICK[FIO]']
+поле "Телефон" = //input[@name='BUY1CLICK[PHONE]']
+поле "Місто" = //input[@name='BUY1CLICK[CITY]']
+кнопка "Нова Пошта" = //a[@id='np_delivery_link']
+поле "Коментар" = //textarea[@name='BUY1CLICK[COMMENT]']
+кнопка "Оформити замовлення" = //button[text()='Оформити замовлення']
+повідомлення про успішно оформлене замовлення = //*[@class='popup-content']
 
 
 005

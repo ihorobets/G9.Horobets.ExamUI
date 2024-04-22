@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.elements.HeaderElement;
 
 public class PersonalPage extends ParentPage {
@@ -70,6 +71,14 @@ public class PersonalPage extends ParentPage {
     @FindBy(xpath = "//button[@name='Login']")
     private WebElement buttonUviity;
 
+    @FindBy(xpath = "//a[@class='btn']")
+    private WebElement buttonPereityVCatalog;
+
+    @Override
+    protected String getRelativeUrl() {
+        return "/personal/[a-zA-Z0-9/]*";
+    }
+
     public PersonalPage(WebDriver webDriver) {
         super(webDriver);
     }
@@ -79,10 +88,7 @@ public class PersonalPage extends ParentPage {
     }
 
     public PersonalPage checkIsRedirectToPersonalPage() {
-        // TODO checkUrlWithPattern();
-        // todo element
-        // Assert.assertTrue("Avatar small is not displayed"
-        // , isElementDisplayed(avatarSmall, "Avatar Small"));
+        checkUrlWithPattern();
         return this;
     }
 
@@ -230,5 +236,11 @@ public class PersonalPage extends ParentPage {
     public PersonalPage checkIsButtonZareestruvatysyaIsDisplayed() {
         checkElementsDisplayed(buttonZareestruvatysya, "Button Zareestruvatysya");
         return this;
+    }
+
+    public CatalogPage clickOnButtonPereityVCatalog() {
+
+        clickOnElement(buttonPereityVCatalog);
+        return new CatalogPage(webDriver);
     }
 }

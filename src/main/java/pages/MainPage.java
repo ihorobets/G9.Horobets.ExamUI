@@ -10,6 +10,10 @@ import pages.elements.HeaderElement;
 public class MainPage extends ParentPage {
 
 
+    @Override
+    protected String getRelativeUrl() {
+        return "/";
+    }
 
     public MainPage(WebDriver webDriver) {
         super(webDriver);

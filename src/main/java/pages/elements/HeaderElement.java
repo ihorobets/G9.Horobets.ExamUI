@@ -20,6 +20,9 @@ public class HeaderElement extends CommonActionsWithElements {
     @FindBy(xpath = "//a[@class='personal-link icon-custom']")
     private WebElement buttonMiyCabinet;
 
+    @FindBy(xpath = "//*[@id='bx_basketFKauiI']//a")
+    private WebElement buttonKoshyk;
+
 
     public HeaderElement(WebDriver webDriver) {
         super(webDriver);
@@ -43,6 +46,11 @@ public class HeaderElement extends CommonActionsWithElements {
 
     public PersonalPage clickOnButtonMiyCabinet() {
         clickOnElement(buttonMiyCabinet);
+        return new PersonalPage(webDriver);
+    }
+
+    public PersonalPage clickOnButtonKoshyk() {
+        clickOnElement(buttonKoshyk);
         return new PersonalPage(webDriver);
     }
 }

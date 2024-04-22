@@ -1,8 +1,8 @@
 package pages;
 
 
-
 import org.checkerframework.checker.units.qual.K;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -49,6 +49,41 @@ public class KonservyPage extends ParentPage {
     @FindBy(xpath = "//*[@class='success-message']")
     private WebElement successMessage;
 
+    @FindBy(xpath = "//a[@class='btn one-click']")
+    private WebElement buttonBuyInOneClick;
+
+    @FindBy(xpath = "//input[@name='BUY1CLICK[FIO]']")
+    private WebElement inputNameForOrder;
+
+    @FindBy(xpath = "//input[@name='BUY1CLICK[PHONE]']")
+    private WebElement inputPhoneForOrder;
+
+    @FindBy(xpath = "//input[@name='BUY1CLICK[CITY]']")
+    private WebElement inputCityForOrder;
+
+    @FindBy(xpath = "//a[@id='np_delivery_link']")
+    private WebElement buttonDostavkaForOrder;
+
+    @FindBy(xpath = "//textarea[@name='BUY1CLICK[COMMENT]']")
+    private WebElement inputComentarForOrder;
+
+    @FindBy(xpath = "//button[text()='Оформити замовлення']")
+    private WebElement buttonOformytyZamovlennya;
+
+    @FindBy(xpath = "//a[@id='np_delivery_link']")
+    private WebElement buttonNovaPoshta;
+
+    @FindBy(xpath = "//*[@class='popup-content']")
+    private WebElement successMessageOrder;
+
+    @FindBy(xpath = "//a[@href='/catalog/sobaki/konservy-dlja-sobak/lechebnye_konservy_dlya_sobak/']")
+    private WebElement titleVologyiLikuvalnyiKorm;
+
+    @Override
+    protected String getRelativeUrl() {
+        return "/catalog/sobaki/konservy-dlja-sobak/";
+    }
+
     public KonservyPage(WebDriver webDriver) {
         super(webDriver);
     }
@@ -58,8 +93,9 @@ public class KonservyPage extends ParentPage {
     }
 
     public KonservyPage checkIsRedirectToKonservyPage() {
-        // TODO checkUrlWithPattern();
-        // todo element
+        checkUrl();
+        Assert.assertTrue("Title Vologyi Likuvalnyi Korm  is not displayed",
+                isElementDisplayed(titleVologyiLikuvalnyiKorm, "Title Vologyi Likuvalnyi Korm"));
         return this;
     }
 
@@ -95,23 +131,23 @@ public class KonservyPage extends ParentPage {
         return this;
     }
 
-    public KonservyPage enterTextIntoInputName(String text){
+    public KonservyPage enterTextIntoInputName(String text) {
         cleanAndEnterTextIntoElement(inputName, text);
         return this;
     }
 
-    public KonservyPage enterTextIntoInputPhone(String text){
+    public KonservyPage enterTextIntoInputPhone(String text) {
         cleanAndEnterTextIntoElement(inputPhone, text);
         return this;
     }
 
-    public KonservyPage enterTextIntoInputEmail(String text){
+    public KonservyPage enterTextIntoInputEmail(String text) {
         cleanAndEnterTextIntoElement(inputEmail, text);
         return this;
     }
 
 
-    public KonservyPage enterTextIntoInputMessage(String text){
+    public KonservyPage enterTextIntoInputMessage(String text) {
         cleanAndEnterTextIntoElement(inputMessage, text);
         return this;
     }
@@ -132,15 +168,44 @@ public class KonservyPage extends ParentPage {
         return this;
     }
 
-//    public KonservyPage checkIsSuccessMessageDisplayed() {
-//        Assert.assertTrue("Success message is not displayed"
-//                , isElementDisplayed(successMessage, "Success Message"));
-//        return this;
-//    }
+    public KonservyPage clickOnButtonBuyInOneClick() {
+        clickOnElement(buttonBuyInOneClick);
+        return this;
+    }
 
-//    public KonservyPage checkTextInSuccessMessage(String expectedMessageText) {
-//        String actualText = successMessage.getText();
-//        Assert.assertEquals("Text in message", expectedMessageText, actualText);
-//        return this;
-//    }
+    public KonservyPage enterTextIntoInputNameForOrder(String text) {
+        cleanAndEnterTextIntoElement(inputNameForOrder, text);
+        return this;
+    }
+
+    public KonservyPage enterTextIntoInputPhoneForOrder(String text) {
+        cleanAndEnterTextIntoElement(inputPhoneForOrder, text);
+        return this;
+    }
+
+    public KonservyPage enterTextIntoInputCityForOrder(String text) {
+        cleanAndEnterTextIntoElement(inputCityForOrder, text);
+        return this;
+    }
+
+    public KonservyPage clickOnButtonNovaPoshta() {
+        clickOnElement(buttonNovaPoshta);
+        return this;
+    }
+
+    public KonservyPage enterTextIntoInputCommentForOrder(String text) {
+        cleanAndEnterTextIntoElement(inputComentarForOrder, text);
+        return this;
+    }
+
+    public KonservyPage clickOnButtonOformytyZamovlennya() {
+        clickOnElement(buttonOformytyZamovlennya);
+        return this;
+    }
+
+    public KonservyPage checkIsSuccessMessageOrderDisplayed() {
+        checkElementsDisplayed(successMessageOrder, "Success Message Order");
+        return this;
+    }
+
 }
