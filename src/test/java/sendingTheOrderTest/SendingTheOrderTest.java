@@ -5,15 +5,16 @@ import org.junit.Test;
 
 public class SendingTheOrderTest extends BaseTest {
 
+    final String konservaProPlan = "Purina Pro Plan Veterinary Diets HA Hypoallergenic";
+
     @Test
     public void TC_004_sendingTheOrderInOneClickTest() {
         pageProvider.getMainPage().openMainPage();
         pageProvider.getMainPage().getHeaderElement().clickOnButtonKoshyk()
-                .checkIsRedirectToPersonalPage()
                 .clickOnButtonPereityVCatalog()
                 .checkIsRedirectToCatalogPage()
                 .clickOnButtonSobaki().checkIsRedirectToSobakiPage().clickOnButtonKonservy()
-                .checkIsRedirectToKonservyPage().clickOnKonservaProPlan()
+                .checkIsRedirectToKonservyPage().clickOnKonserva(konservaProPlan)
                 .clickOnButtonBuyInOneClick().enterTextIntoInputNameForOrder(data.TestData.VALID_NAME_FOR_ORDER)
                 .enterTextIntoInputPhoneForOrder(data.TestData.VALID_PHONE_FOR_ORDER)
                 .enterTextIntoInputCityForOrder(data.TestData.VALID_CITY_FOR_ORDER)
@@ -24,8 +25,6 @@ public class SendingTheOrderTest extends BaseTest {
         ;
 
     }
-
-
 
 
 }

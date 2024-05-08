@@ -5,6 +5,9 @@ import org.junit.Test;
 
 public class AddProductsToFavoriteTest extends BaseTest {
 
+    final String konservaRoyalCanin = "Royal Canin Veterinary Gastrointestinal Puppy Ultra Soft Mouse";
+
+
     @Test
     public void TC_002_addFavoriteProductToKoshykTest() {
         pageProvider.getMainPage().openMainPage();
@@ -16,13 +19,11 @@ public class AddProductsToFavoriteTest extends BaseTest {
                 .clickOnTorgovaMarka()
                 .clickOnButtonRoyalCanin()
                 .clickOnButtonPokazaty()
-                .clickOnKonservaRoyalCanin()
+                .clickOnKonserva(konservaRoyalCanin)
                 .clickOnButtonVybrane();
         pageProvider.getMainPage().getHeaderElement().clickOnButtonVybrane()
                 .checkIsRedirectToKoshyk()
-                .checkIsKovservaRoyalCaninDisplayed()
-                .checkIsButtonOformytyZamovlennyaDisplayed()
-
+                .checkIsKovservaDisplayed(konservaRoyalCanin)
 
         ;
 

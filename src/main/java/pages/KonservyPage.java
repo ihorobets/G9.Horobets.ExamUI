@@ -1,8 +1,8 @@
 package pages;
 
 
-import org.checkerframework.checker.units.qual.K;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -22,8 +22,8 @@ public class KonservyPage extends ParentPage {
     @FindBy(xpath = "//a[@class='bx_filter_search_button']")
     private WebElement buttonPokazaty;
 
-    @FindBy(xpath = "//a[contains(text(), 'Royal Canin Veterinary Gastrointestinal Puppy Ultra Soft Mouse')]")
-    private WebElement KonservaRoyalCanin;
+    @FindBy(xpath = "//a[contains(text(), '%s')]")
+    private WebElement konserva;
 
     @FindBy(xpath = "//a[@id='bx_117848907_23329_wish_list']")
     private WebElement buttonVybrene;
@@ -42,9 +42,6 @@ public class KonservyPage extends ParentPage {
 
     @FindBy(xpath = "//button[@name='web_form_submit']")
     private WebElement buttonSend;
-
-    @FindBy(xpath = "//a[contains(text(), 'Purina Pro Plan Veterinary Diets HA Hypoallergenic')]")
-    private WebElement konservaProPlan;
 
     @FindBy(xpath = "//*[@class='success-message']")
     private WebElement successMessage;
@@ -79,6 +76,8 @@ public class KonservyPage extends ParentPage {
     @FindBy(xpath = "//a[@href='/catalog/sobaki/konservy-dlja-sobak/lechebnye_konservy_dlya_sobak/']")
     private WebElement titleVologyiLikuvalnyiKorm;
 
+    private String konservaLocator = "//a[contains(text(), '%s')]";
+
     @Override
     protected String getRelativeUrl() {
         return "/catalog/sobaki/konservy-dlja-sobak/";
@@ -86,10 +85,6 @@ public class KonservyPage extends ParentPage {
 
     public KonservyPage(WebDriver webDriver) {
         super(webDriver);
-    }
-
-    public HeaderElement getHeaderElement() {
-        return new HeaderElement(webDriver);
     }
 
     public KonservyPage checkIsRedirectToKonservyPage() {
@@ -120,9 +115,14 @@ public class KonservyPage extends ParentPage {
         return this;
     }
 
-    public KonservyPage clickOnKonservaRoyalCanin() {
-        clickOnElement(KonservaRoyalCanin);
+    public KonservyPage clickOnKonserva(String text) {
+        clickOnElement(getKonserva(text));
         return this;
+    }
+
+    private WebElement getKonserva(String konserva) {
+        String locator = String.format(konservaLocator, konserva);
+        return webDriver.findElement(By.xpath(locator));
     }
 
 
@@ -152,11 +152,6 @@ public class KonservyPage extends ParentPage {
         return this;
     }
 
-
-    public KonservyPage clickOnKonservaProPlan() {
-        clickOnElement(konservaProPlan);
-        return this;
-    }
 
     public KonservyPage clickOnButtonSend() {
         clickOnElement(buttonSend);

@@ -21,7 +21,7 @@ public class LogOutFromPersonalCabinetTest extends BaseTest {
         pageProvider.getMainPage().openMainPage();
         pageProvider.getMainPage().getHeaderElement()
                 .clickOnButtonMiyCabinet()
-                .checkIsRedirectToPersonalPage()
+                .checkIsRedirectToPersonalPageSecond()
                 .checkIsButtonPotochniZamovlennyaIsDisplayed()
                 .checkIsButtonOsobystiDaniIsDisplayed()
                 .checkIsButtonIstoriyaZamovlenIsDisplayed()

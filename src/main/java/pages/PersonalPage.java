@@ -1,9 +1,11 @@
 package pages;
 
+import com.google.common.util.concurrent.AtomicDouble;
+import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.elements.HeaderElement;
 
 public class PersonalPage extends ParentPage {
@@ -74,6 +76,14 @@ public class PersonalPage extends ParentPage {
     @FindBy(xpath = "//a[@class='btn']")
     private WebElement buttonPereityVCatalog;
 
+    @FindBy(xpath = "//*[contains(text(), '%s')]")
+    private WebElement konserva;
+
+    private String konservaLocator = "//*[contains(text(), '%s')]";
+
+    @FindBy(xpath = "//span[text()='Мій кабінет']")
+    private WebElement buttonMiyCabinet;
+
     @Override
     protected String getRelativeUrl() {
         return "/personal/[a-zA-Z0-9/]*";
@@ -89,6 +99,8 @@ public class PersonalPage extends ParentPage {
 
     public PersonalPage checkIsRedirectToPersonalPage() {
         checkUrlWithPattern();
+        Assert.assertTrue("Button Zareestruvatysya is not displayed"
+                , isElementDisplayed(buttonZareestruvatysya, "Button Zareestruvatysya"));
         return this;
     }
 
@@ -140,19 +152,21 @@ public class PersonalPage extends ParentPage {
     }
 
     public PersonalPage checkIsRedirectToKoshyk() {
-        // TODO checkUrlWithPattern();
-        // todo element
+        Assert.assertTrue("Button Oformlennya Zamovlennya is not displayed"
+                , isElementDisplayed(buttonOformlennyaZamovlennya, "Button Oformlennya Zamovlennya"));
         return this;
     }
 
-    public PersonalPage checkIsButtonOformytyZamovlennyaDisplayed() {
-        checkElementsDisplayed(buttonOformlennyaZamovlennya, "Button Oformlennya Zamovlennya");
+
+    public PersonalPage checkIsKovservaDisplayed(String text) {
+        Assert.assertTrue("Konserva is not displayed", isElementDisplayed(getKonserva(text), "Konserva"));
         return this;
+
     }
 
-    public PersonalPage checkIsKovservaRoyalCaninDisplayed() {
-        // TODO Assert.assertEquals();
-        return this;
+    private WebElement getKonserva(String konserva) {
+        String locator = String.format(konservaLocator, konserva);
+        return webDriver.findElement(By.xpath(locator));
     }
 
     public PersonalPage checkIsButtonReestratsiyaIsDisplayed() {
@@ -189,37 +203,44 @@ public class PersonalPage extends ParentPage {
     }
 
     public PersonalPage checkIsButtonPotochniZamovlennyaIsDisplayed() {
-        isElementDisplayed(buttonPotochniZamovlennya, "Button Potochni Zamovlennya");
+        Assert.assertTrue("Button Potochni Zamovlennya is not displayed"
+                , isElementDisplayed(buttonPotochniZamovlennya, "Button Potochni Zamovlennya"));
         return this;
     }
 
     public PersonalPage checkIsButtonOsobystiDaniIsDisplayed() {
-        isElementDisplayed(buttonOsobystiDani, "Button Osobysti Dani");
+        Assert.assertTrue("Button Osobysti Dani is not displayed"
+                , isElementDisplayed(buttonOsobystiDani, "Button Osobysti Dani"));
         return this;
     }
 
     public PersonalPage checkIsButtonIstoriyaZamovlenIsDisplayed() {
-        isElementDisplayed(buttonIstoriyaZamovlen, "Button Istoriya Zamovlen");
+        Assert.assertTrue("Button Istoriya Zamovlen is not displayed"
+                , isElementDisplayed(buttonIstoriyaZamovlen, "Button Istoriya Zamovlen"));
         return this;
     }
 
     public PersonalPage checkIsButtonProfiliZamovlenIsDisplayed() {
-        isElementDisplayed(buttonProfiliZamovlen, "Button Profili Zamovlen");
+        Assert.assertTrue("Button Profili Zamovlen is not displayed"
+                , isElementDisplayed(buttonProfiliZamovlen, "Button Profili Zamovlen"));
         return this;
     }
 
     public PersonalPage checkIsButtonKoshykIsDisplayed() {
-        isElementDisplayed(buttonKoshyk, "Button Koshyk");
+        Assert.assertTrue("Button Koshyk is not displayed"
+                , isElementDisplayed(buttonKoshyk, "Button Koshyk"));
         return this;
     }
 
     public PersonalPage checkIsButtonOpovischennyaProNayavnisntIsDisplayed() {
-        isElementDisplayed(buttonOpovischennyaProNayavnisnt, "Button Opovischennya Pro Nayavnisnt");
+        Assert.assertTrue("Button Opovischennya Pro Nayavnisn is not displayed"
+                , isElementDisplayed(buttonOpovischennyaProNayavnisnt, "Button Opovischennya Pro Nayavnisnt"));
         return this;
     }
 
     public PersonalPage checkIsButtonVyityIsDisplayed() {
-        isElementDisplayed(buttonVyity, "Button Vyity");
+        Assert.assertTrue("Button Vyity is not displayed"
+                , isElementDisplayed(buttonVyity, "Button Vyity"));
         return this;
     }
 
@@ -242,5 +263,12 @@ public class PersonalPage extends ParentPage {
 
         clickOnElement(buttonPereityVCatalog);
         return new CatalogPage(webDriver);
+    }
+
+    public PersonalPage checkIsRedirectToPersonalPageSecond() {
+        checkUrlWithPattern();
+        Assert.assertTrue("Button Miy cabinet is not displayed"
+                , isElementDisplayed(buttonMiyCabinet, "Miy cabinet"));
+        return this;
     }
 }
